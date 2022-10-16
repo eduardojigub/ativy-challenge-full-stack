@@ -1,8 +1,16 @@
 import React from 'react';
+import Layout from '../components/Layout';
+import Login from '../components/auth/Login';
+import Register from '../components/auth/Register';
 
 function Auth() {
   return (
-    <div>Auth</div>
+    <Layout>
+      <div>
+        <Login />
+        <Register />
+      </div>
+    </Layout>
   );
 }
 
