@@ -10,7 +10,7 @@ export const createTask = async (req, res, next) => {
   });
   try {
     const savedTask = await newTask.save();
-    res.status(200).json(savedTask);
+    res.status(201).json(savedTask);
   } catch (err) {
     next(err);
   }
