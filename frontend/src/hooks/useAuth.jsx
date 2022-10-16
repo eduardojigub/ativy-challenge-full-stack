@@ -19,7 +19,7 @@ export default () => {
   useEffect(() => {
     (
       async () => {
-        const data = await verifyAuth;
+        const data = await verifyAuth();
         setAuth(data);
       }
     )();

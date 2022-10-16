@@ -6,7 +6,7 @@ function PrivateRoutes() {
   const { auth } = useAuth();
 
   if (auth === undefined) {
-    return 'loading...';
+    return 'Carregando...';
   }
   return auth === true ? <Outlet /> : <Navigate to="/auth" />;
 }

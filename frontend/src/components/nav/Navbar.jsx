@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { FaUserAlt } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import classes from './Navbar.module.scss';
@@ -37,15 +38,19 @@ function Navbar() {
   return (
     <header>
       <div className={classes.userInfo}>
+        <FaUserAlt className={classes.userIcon} />
         <div>
-          <h1 className={classes.name}>{user?.name}</h1>
-          <h1 className={classes.email}>{user?.email}</h1>
-          <h1 className={classes.name}>{user?.address}</h1>
-          <Link to="/edit-profile" className={classes.editBtn}>Editar</Link>
+          <h1 className={classes.name}>{user.name}</h1>
+          <p className={classes.email}>{user.email}</p>
+          <Link to="/edit-profile" className={classes.editBtn}>
+            Edit
+          </Link>
         </div>
       </div>
       <nav>
-        <button type="button" className={classes.logout} onClick={handleLogout}>Logout</button>
+        <button type="button" className={classes.logout} onClick={handleLogout}>
+          logout
+        </button>
       </nav>
     </header>
   );
