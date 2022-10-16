@@ -20,6 +20,13 @@ app.use(cookieParser()); // parses the incoming cookies from request to JSON val
 // routes
 app.use('/api', allRoutes);
 
+// error Handler
+app.use((err, req, res) => {
+  const status = err.statusCode || 500;
+  const message = err.message || 'Internal Server Error';
+  res.status(status).json({ message, stack: err.stack });
+});
+
 // função que connectDB é a função que conecta o mongo ao Atlas, usando o .env
 const connectionParams = {
   useNewUrlParser: true,
