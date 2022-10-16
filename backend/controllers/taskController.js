@@ -49,3 +49,16 @@ export const updateTask = async (req, res, next) => {
     return next(err);
   }
 };
+
+export const deleteTask = async (req, res, next) => {
+  try {
+    const task = await Task.findById(req.params.taskId);
+    if (task.user === req.user.id) {
+      return next(createError({ status: 401, message: "It's not your todo." }));
+    }
+    await Task.findByIdAndDelete(req.params.taskId);
+    return res.json('Task Deleted Successfully');
+  } catch (err) {
+    return next(err);
+  }
+};
