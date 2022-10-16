@@ -76,7 +76,7 @@ export const logout = async (req, res) => {
   res.status(200).json({ message: 'Logout success' });
 };
 
-// checa o token/autenticação no front-end
+// adiciona isLoggedIn to verify at any requests if user is logged and jwt is available
 export const isLoggedIn = async (req, res) => {
   const token = req.cookies.access_token;
   if (!token) {
