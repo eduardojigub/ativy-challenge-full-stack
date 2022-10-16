@@ -12,5 +12,7 @@ module.exports = {
   },
   rules: {
     'no-console': 0,
+    'import/exntesions': 0,
+    'no-underscore-dangle': 0,
   },
 };
