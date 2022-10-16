@@ -71,6 +71,7 @@ export const login = async (req, res, next) => {
   }
 };
 
-export const logout = () => {
-
+export const logout = async (req, res) => {
+  res.clearCookie('access_token'); // limpa os cookies (jwt)
+  res.status(200).json({ message: 'Logout success' });
 };
