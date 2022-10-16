@@ -42,6 +42,7 @@ function Navbar() {
         <div>
           <h1 className={classes.name}>{user.name}</h1>
           <p className={classes.email}>{user.email}</p>
+          <p className={classes.email}>{user.address}</p>
           <Link to="/edit-profile" className={classes.editBtn}>
             Edit
           </Link>
