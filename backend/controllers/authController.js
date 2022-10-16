@@ -75,3 +75,17 @@ export const logout = async (req, res) => {
   res.clearCookie('access_token'); // limpa os cookies (jwt)
   res.status(200).json({ message: 'Logout success' });
 };
+
+// checa o token/autenticação no front-end
+export const isLoggedIn = async (req, res) => {
+  const token = req.cookies.access_token;
+  if (!token) {
+    return res.json(false);
+  }
+  return jwt.verify(token, process.env.JWT_SECRET, (err) => {
+    if (err) {
+      return res.json(false);
+    }
+    return res.json(true);
+  });
+};
