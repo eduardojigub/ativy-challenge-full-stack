@@ -1,10 +1,10 @@
 /* eslint-disable import/extensions */
 import express from 'express';
-import { getUserInfo, updateUser } from '../controllers/userController.js';
+import { getUserById, updateUser } from '../controllers/userController.js';
 
 const router = express.Router();
 
-router.get('/me/', getUserInfo);
+router.get('/me/', getUserById);
 router.put('/me', updateUser);
 
 export default router;
