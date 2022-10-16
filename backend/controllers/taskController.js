@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import Task from '../models/taskModel.js';
-// import createError from '../middlewares/errorMiddleware.js';
+import createError from '../middlewares/errorMiddleware.js';
 
 export const createTask = async (req, res, next) => {
   const newTask = new Task({
@@ -31,5 +31,21 @@ export const getCurrentUserTasks = async (req, res, next) => {
     res.status(200).json(tasks);
   } catch (err) {
     next(err);
+  }
+};
+
+export const updateTask = async (req, res, next) => {
+  try {
+    const task = await Task.findById(req.params.taskId).exec();
+    if (!task) return next(createError({ status: 404, message: 'Task not found' }));
+    if (task.user.toString() !== req.user.id) return next(createError({ status: 401, message: "It's not your todo task." }));
+
+    const updatedTask = await Task.findByIdAndUpdate(req.params.taskId, {
+      title: req.body.title,
+      completed: req.body.completed,
+    }, { new: true });
+    return res.status(200).json(updatedTask);
+  } catch (err) {
+    return next(err);
   }
 };
