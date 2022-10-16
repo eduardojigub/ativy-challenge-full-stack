@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 8000;
 app.use(cors()); // ajuda na conexão com o front-end, permite requests do React
 app.use(morgan('tiny')); // pacote que auxilia no controle de logs no console do node
 app.use(express.json());
-app.use(cookieParser()); // parses the incoming cookies from request to JSON value.
+app.use(cookieParser()); // parses the incoming cookies from request to JSON value..
 
 // routes
 app.use('/api', allRoutes);
