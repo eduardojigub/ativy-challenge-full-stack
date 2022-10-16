@@ -16,6 +16,8 @@ function Login() {
           Password
           <input type="password" name="password" placeholder="Digite sua senha" required />
         </label>
+        <br />
+        <button type="submit">Login</button>
       </form>
     </div>
   );
