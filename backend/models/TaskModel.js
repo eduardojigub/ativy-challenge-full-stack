@@ -14,7 +14,7 @@ const taskSchema = new Schema({
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
+    ref: 'User', // faz a referência das collections, fazendo a associação entre tabelas por essa referência.
     required: true,
   },
 }, { timestamps: true });

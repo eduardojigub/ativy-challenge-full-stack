@@ -7,6 +7,7 @@ const connectionParams = {
   useUnifiedTopology: true,
 };
 
+// função que conecta o mongo ao Atlas, usando o .env
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DB_CONNECTION_STRING, connectionParams);
