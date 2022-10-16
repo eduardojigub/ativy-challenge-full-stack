@@ -21,7 +21,8 @@ app.use(cookieParser()); // parses the incoming cookies from request to JSON val
 app.use('/api', allRoutes);
 
 // error Handler
-app.use((err, req, res) => {
+// eslint-disable-next-line no-unused-vars
+app.use((err, req, res, next) => {
   const status = err.statusCode || 500;
   const message = err.message || 'Internal Server Error';
   res.status(status).json({ message, stack: err.stack });

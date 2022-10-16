@@ -2,13 +2,19 @@
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/userModel.js';
+import createError from '../middlewares/errorMiddleware.js';
 
-export const register = async (req, res) => {
+export const register = async (req, res, next) => {
   if (!req.body.name
     || !req.body.email // verificando se todos os campos estão preenchidos
     || !req.body.password
     || !req.body.address) {
-    return res.json('All fields are required');
+    return next(
+      createError({
+        message: 'Email, password, name and address are required',
+        statusCode: 400,
+      }),
+    );
   }
   try {
     const salt = await bcryptjs.genSalt(10);
@@ -24,24 +30,29 @@ export const register = async (req, res) => {
     return res.status(201).json('New user Created');
   } catch (err) {
     console.log(err);
-    return res.json('Internal server error');
+    return next(err);
   }
 };
-export const login = async (req, res) => {
+export const login = async (req, res, next) => {
   if (!req.body.email || !req.body.password) {
-    return res.json('Required fields, email and password');
+    return next(
+      createError({
+        message: 'Email and name are required',
+        statusCode: 400,
+      }),
+    );
   }
   try {
     const user = await User.findOne({ email: req.body.email }).select(
       'name email password',
     );
     if (!user) {
-      return res.status(404).json('No user found');
+      return next(createError({ status: 404, message: 'No user found' }));
     }
     const isPasswordCorrect = await bcryptjs.compare(req.body.password, user.password);
     if (!isPasswordCorrect) {
       // compara o password de entrada com o password armazenado no BD usando bcrypt
-      return res.json('Wrong Password');
+      return next(createError({ status: 400, message: 'Password is incorrect' }));
     }
     const payload = {
       id: user._id,
@@ -58,4 +69,8 @@ export const login = async (req, res) => {
     console.log(err);
     return res.json('server error');
   }
+};
+
+export const logout = () => {
+
 };
