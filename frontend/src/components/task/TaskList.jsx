@@ -6,7 +6,9 @@ import TaskItem from './TaskItem';
 import classes from './TaskList.module.scss';
 
 function TaskList() {
-  const [tasklist, setTasklist] = useState([]);
+  const [taskList, setTasklist] = useState([]);
+  const [isAddingNew, setIsAddingNew] = useState(false);
+  const [newTask, setNewTask] = useState('');
 
   const getTasks = async () => {
     try {
@@ -19,6 +21,10 @@ function TaskList() {
     }
   };
 
+  const addNewButtonClick = () => {
+    setIsAddingNew(!isAddingNew);
+  };
+
   useEffect(() => {
     getTasks();
   }, []);
@@ -27,7 +33,25 @@ function TaskList() {
     try {
       await axios.delete(`/api/tasks/${id}`);
       toast.success('Tarefa deletada');
-      setTasklist(tasklist.filter((task) => task._id !== id));
+      setTasklist(taskList.filter((task) => task._id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const addNewTask = async (e) => {
+    e.preventDefault();
+    if (newTask.length <= 0) {
+      toast.error('Task está vazia');
+    }
+    try {
+      const { data } = await axios.post('/api/tasks', {
+        title: newTask,
+      });
+      toast.success('Nova Tarefa Criada!');
+      setTasklist([{ ...data }, ...taskList]);
+      setNewTask('');
+      setIsAddingNew(false);
     } catch (err) {
       console.log(err);
     }
@@ -36,12 +60,18 @@ function TaskList() {
   return (
     <div>
       <div className={classes.topBar}>
-        <button type="button" className={classes.addNew}>Adicionar Tarefa</button>
+        <button type="button" className={classes.addNew} onClick={addNewButtonClick}>Adicionar Tarefa</button>
       </div>
-      {tasklist.length > 0 ? (
+      {isAddingNew && (
+        <form className={classes.addNewForm} onSubmit={addNewTask}>
+          <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} placeholder="Digite sua tarefa" />
+          <button type="submit">Adicionar</button>
+        </form>
+      )}
+      {taskList.length > 0 ? (
         <table className={classes.taskList_table}>
           <tbody>
-            {tasklist.map((task) => (
+            {taskList.map((task) => (
               <TaskItem key={task._id} task={task} deleteTask={deleteTask} />
             ))}
           </tbody>
