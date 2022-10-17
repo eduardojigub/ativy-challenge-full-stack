@@ -17,7 +17,7 @@ function Register() {
       toast.success('Registrado com sucesso!');
     } catch (err) {
       console.log(err);
-      toast.error('Registro falhou!');
+      toast.error('Registro falhou! Verifique seus dados e tente novamente');
     }
   };
   return (
