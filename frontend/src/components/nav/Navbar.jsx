@@ -59,7 +59,7 @@ function Navbar() {
       </div>
       <nav>
         <button type="button" className={classes.logout} onClick={handleLogout}>
-          logout
+          Sair
         </button>
       </nav>
     </header>

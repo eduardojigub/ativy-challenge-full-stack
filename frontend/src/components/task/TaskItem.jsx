@@ -42,16 +42,6 @@ function TaskItem({ task, deleteTask }) {
 
         </button>
       </td>
-      <td>
-        <button
-          className={classes.editBtn}
-          type="button"
-          onClick={() => deleteTask(task._id)}
-        >
-          Editar
-
-        </button>
-      </td>
     </tr>
   );
 }

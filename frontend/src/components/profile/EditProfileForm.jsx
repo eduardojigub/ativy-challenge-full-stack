@@ -49,7 +49,7 @@ function EditProfileForm() {
         Home
       </Link>
       <div>
-        <h1>Edit Profile</h1>
+        <h1>Editar Perfil</h1>
         <form className={classes.editForm} onSubmit={updateProfile}>
           <label htmlFor="name">
             Nome

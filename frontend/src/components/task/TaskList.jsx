@@ -32,7 +32,17 @@ function TaskList() {
   const deleteTask = async (id) => {
     try {
       await axios.delete(`/api/tasks/${id}`);
-      toast.success('Tarefa deletada');
+      toast.success('Tarefa deletada com sucesso');
+      setTasklist(taskList.filter((task) => task._id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const updateTask = async (id) => {
+    try {
+      await axios.put(`/api/tasks/${id}`);
+      toast.success('Tarefa atualizada com sucesso!');
       setTasklist(taskList.filter((task) => task._id !== id));
     } catch (err) {
       console.log(err);
@@ -72,7 +82,12 @@ function TaskList() {
         <table className={classes.taskList_table}>
           <tbody>
             {taskList.map((task) => (
-              <TaskItem key={task._id} task={task} deleteTask={deleteTask} />
+              <TaskItem
+                key={task._id}
+                task={task}
+                deleteTask={deleteTask}
+                updateTask={updateTask}
+              />
             ))}
           </tbody>
         </table>
