@@ -47,7 +47,7 @@ function TaskItem({ task, deleteTask }) {
         <Link to="edit-profile">
 
           <button
-            className={classes.deleteBtn}
+            className={classes.editBtn}
             type="button"
           >
             Editar

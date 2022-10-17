@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import EditProfile from './pages/EditProfile';
 import Auth from './pages/Auth';
 import PrivateRoutes from './components/PrivateRoutes';
+import EditTask from './pages/EditTask';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route element={<PrivateRoutes />}>
           <Route path="/" element={<Home />} />
           <Route path="/edit-profile" element={<EditProfile />} />
+          <Route path="/edit-task" element={<EditTask />} />
         </Route>
         <Route path="/auth" element={<Auth />} />
       </Routes>
