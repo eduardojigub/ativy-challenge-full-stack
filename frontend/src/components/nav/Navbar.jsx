@@ -41,10 +41,19 @@ function Navbar() {
         <FaUserAlt className={classes.userIcon} />
         <div>
           <h1 className={classes.name}>{user.name}</h1>
-          <p className={classes.email}>{user.email}</p>
-          <p className={classes.email}>{user.address}</p>
+          <p className={classes.email}>
+            Email:
+            {' '}
+            {user.email}
+          </p>
+          <p className={classes.email}>
+            {' '}
+            Endereço:
+            {' '}
+            {user.address}
+          </p>
           <Link to="/edit-profile" className={classes.editBtn}>
-            Edit
+            Editar Perfil
           </Link>
         </div>
       </div>
