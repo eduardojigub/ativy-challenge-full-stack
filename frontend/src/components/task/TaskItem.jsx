@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import classes from './TaskItem.module.scss';
 
 function TaskItem({ task, deleteTask }) {
@@ -41,6 +42,18 @@ function TaskItem({ task, deleteTask }) {
           Deletar
 
         </button>
+      </td>
+      <td>
+        <Link to="edit-profile">
+
+          <button
+            className={classes.deleteBtn}
+            type="button"
+          >
+            Editar
+
+          </button>
+        </Link>
       </td>
     </tr>
   );

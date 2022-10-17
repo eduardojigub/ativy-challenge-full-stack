@@ -39,16 +39,6 @@ function TaskList() {
     }
   };
 
-  const updateTask = async (id) => {
-    try {
-      await axios.put(`/api/tasks/${id}`);
-      toast.success('Tarefa atualizada com sucesso!');
-      setTasklist(taskList.filter((task) => task._id !== id));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   const addNewTask = async (e) => {
     e.preventDefault();
     if (newTask.length <= 0) {
@@ -86,7 +76,6 @@ function TaskList() {
                 key={task._id}
                 task={task}
                 deleteTask={deleteTask}
-                updateTask={updateTask}
               />
             ))}
           </tbody>
