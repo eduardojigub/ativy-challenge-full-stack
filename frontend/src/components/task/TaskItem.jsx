@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import classes from './TaskItem.module.scss';
 
 function TaskItem({ task, deleteTask }) {
@@ -42,15 +43,17 @@ function TaskItem({ task, deleteTask }) {
 
         </button>
       </td>
-      <td>
-        <button
-          className={classes.editBtn}
-          type="button"
-        >
-          Editar
+      <Link to="/edit-task">
+        <td>
+          <button
+            className={classes.editBtn}
+            type="button"
+          >
+            Editar
 
-        </button>
-      </td>
+          </button>
+        </td>
+      </Link>
     </tr>
   );
 }
