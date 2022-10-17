@@ -17,7 +17,7 @@ function Login() {
       toast.success('Login realizado com sucesso!');
     } catch (err) {
       console.log(err);
-      toast.error('Ops! Login falhou!');
+      toast.error('Ops! Senha ou login incorretos!');
     }
   };
 
