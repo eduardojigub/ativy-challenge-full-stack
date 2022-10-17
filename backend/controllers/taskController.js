@@ -25,6 +25,15 @@ export const getAllTasks = async (req, res, next) => {
   }
 };
 
+export const getSingleTask = async (req, res, next) => {
+  try {
+    const task = await Task.findById(req.params.taskId);
+    res.status(200).json(task);
+  } catch (err) {
+    next(err);
+  }
+};
+
 export const getCurrentUserTasks = async (req, res, next) => {
   try {
     const tasks = await Task.find({ user: req.user.id });
