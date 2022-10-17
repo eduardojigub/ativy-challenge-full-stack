@@ -1,5 +1,8 @@
+/* eslint-disable no-underscore-dangle */
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+import TaskItem from './TaskItem';
 import classes from './TaskList.module.scss';
 
 function TaskList() {
@@ -20,6 +23,16 @@ function TaskList() {
     getTasks();
   }, []);
 
+  const deleteTask = async (id) => {
+    try {
+      await axios.delete(`/api/tasks/${id}`);
+      toast.success('Tarefa deletada');
+      setTasklist(tasklist.filter((task) => task._id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div>
       <div className={classes.topBar}>
@@ -29,7 +42,7 @@ function TaskList() {
         <table className={classes.taskList_table}>
           <tbody>
             {tasklist.map((task) => (
-              <h1>{task.title}</h1>
+              <TaskItem key={task._id} task={task} deleteTask={deleteTask} />
             ))}
           </tbody>
         </table>
