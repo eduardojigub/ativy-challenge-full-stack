@@ -1,46 +1,47 @@
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, Link } from 'react-router-dom';
 import { BsArrowLeftShort } from 'react-icons/bs';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import classes from './EditTaskForm.module.scss';
 
 function EditTaskForm() {
-  const [task, setTask] = useState({
-    title: '',
-  });
+  const location = useLocation();
+  const locationData = location.state?.data;
+  const [task, setTask] = useState({ title: '' });
+
   useEffect(() => {
     (
       async () => {
         try {
-          const { data } = await axios.get(`/api/tasks/${task._id}`);
-          console.log(data);
+          const { data } = await await axios.get(`/api/tasks/${locationData.id}`);
           setTask(data);
         } catch (err) {
           console.log(err);
         }
       }
     )();
-  }, [task._id]);
+  }, []);
 
-  // const updateUserInfo = (e) => {
-  //   setUser({
-  //     ...user,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
+  const updateUserInfo = (e) => {
+    setTask({
+      ...task,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  // const updateProfile = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios.put('/api/users/me', user);
-  //     toast.success('Perfil atualizado com sucesso!');
-  //     setTask(res.data);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+  const updateTask = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.put(`/api/tasks/${locationData.id}`, task);
+      console.log(res);
+      toast.success('Perfil atualizado com sucesso!');
+      setTask(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
@@ -49,11 +50,11 @@ function EditTaskForm() {
         Home
       </Link>
       <div>
-        <h1>Editar Perfil</h1>
-        <form className={classes.editForm}>
-          <label htmlFor="name">
+        <h1>Editar Tarefa</h1>
+        <form className={classes.editForm} onSubmit={updateTask}>
+          <label htmlFor="title">
             Task
-            <input type="text" name="name" placeholder="Atualize sua tarefa" required value={task.title} />
+            <input type="text" name="title" placeholder="Atualize sua tarefa" value={task.title} onChange={updateUserInfo} required />
           </label>
           <button type="submit">Salvar</button>
         </form>

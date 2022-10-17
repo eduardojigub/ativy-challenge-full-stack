@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
@@ -8,6 +9,9 @@ import classes from './TaskItem.module.scss';
 function TaskItem({ task, deleteTask }) {
   const [isCompleted, setIsCompleted] = useState(task.completed);
   const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState({
+    id: task._id,
+  });
 
   const handleCheckboxClick = async () => {
     try {
@@ -43,8 +47,8 @@ function TaskItem({ task, deleteTask }) {
 
         </button>
       </td>
-      <Link to="/edit-task">
-        <td>
+      <td>
+        <Link to="/edit-task" state={{ data }}>
           <button
             className={classes.editBtn}
             type="button"
@@ -52,8 +56,8 @@ function TaskItem({ task, deleteTask }) {
             Editar
 
           </button>
-        </td>
-      </Link>
+        </Link>
+      </td>
     </tr>
   );
 }
