@@ -44,7 +44,7 @@ function TaskItem({ task, deleteTask }) {
         </button>
       </td>
       <td>
-        <Link to="edit-profile">
+        <Link to="edit-task">
 
           <button
             className={classes.editBtn}
