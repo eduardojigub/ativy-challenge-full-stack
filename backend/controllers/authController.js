@@ -62,7 +62,7 @@ export const login = async (req, res, next) => {
       expiresIn: '1d', // gera o jwt e seta o limite de expiração dele em 1 dia
     });
     return res.cookie('access_token', token, {
-      httpOnly: true,
+      httpOnly: true, 
       // means you cannot acces this cookie on the front-end. You only can use in the back-end
     }).status(200).json({ message: 'Login sucess' });
   } catch (err) {

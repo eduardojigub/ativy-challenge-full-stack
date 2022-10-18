@@ -16,6 +16,7 @@ app.use(cookieParser()); // parses the incoming cookies from request to JSON val
 
 // routes
 app.use('/api', allRoutes);
+//
 
 // error Handler
 // eslint-disable-next-line no-unused-vars
