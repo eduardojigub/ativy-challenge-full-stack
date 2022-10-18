@@ -8,7 +8,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://ativy-challenge.herokuapp.com',
+        target: 'http://localhost:8000',
       },
     },
   },
