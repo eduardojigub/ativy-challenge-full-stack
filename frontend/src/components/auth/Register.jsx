@@ -22,11 +22,11 @@ function Register() {
   };
   return (
     <div className={classes.register}>
-      <h1 className={classes.title}>Register</h1>
+      <h1 className={classes.title}>Registro</h1>
       <form className={classes.authForm} onSubmit={register}>
         <label htmlFor="name">
           Nome
-          <input type="text" name="name" placeholder="Nome Completo" required />
+          <input type="text" name="name" placeholder="Digite seu nome" required />
         </label>
         <label htmlFor="email">
           Email

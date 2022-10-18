@@ -52,12 +52,13 @@ function Navbar() {
             {' '}
             {user.address}
           </p>
-          <Link to="/edit-profile" className={classes.editBtn}>
-            Editar Perfil
-          </Link>
+
         </div>
       </div>
       <nav>
+        <Link to="/edit-profile" className={classes.editBtn}>
+          Editar Perfil
+        </Link>
         <button type="button" className={classes.logout} onClick={handleLogout}>
           Sair
         </button>

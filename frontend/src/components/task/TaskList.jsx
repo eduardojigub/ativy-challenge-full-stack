@@ -42,7 +42,7 @@ function TaskList() {
   const addNewTask = async (e) => {
     e.preventDefault();
     if (newTask.length <= 0) {
-      toast.error('Task está vazia');
+      toast.error('O campo tarefa está vazio');
     }
     try {
       const { data } = await axios.post('/api/tasks', {
