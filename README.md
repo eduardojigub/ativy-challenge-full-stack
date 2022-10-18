@@ -62,6 +62,7 @@ O JWT é guardado através de cookie logo após o login, e algumas rotas são pr
 ### :warning: Documentação da API
 
 <a href="https://documenter.getpostman.com/view/23926961/2s847FtYgj" />
+https://documenter.getpostman.com/view/23926961/2s847FtYgj
 
 ## :pushpin: Front-end
 
