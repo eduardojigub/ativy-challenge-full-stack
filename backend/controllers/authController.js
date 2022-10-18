@@ -1,7 +1,7 @@
 /* eslint-disable import/extensions */
 import bcryptjs from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import User from '../models/userModel.js';
+import User from '../models/UserModel.js';
 import createError from '../middlewares/errorMiddleware.js';
 
 export const register = async (req, res, next) => {
