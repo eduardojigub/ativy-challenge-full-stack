@@ -45,3 +45,19 @@ Libs utilizadas no módulo de Back end:
 - jsonwebtoken
 
 Desenvolvido com conceitos de arquitetura de software(models e controllers) e Utilização do conceito de Arquitetura REST.
+
+### O que foi desenvolvido
+
+Nesse projeto foi desenvolvido uma API de um CRUD (Create, Read, Update e Delete) de uma to-do-list com endpoints que irão permitir a interação do usuário com a interface de navegação, persistindo os dados em um banco de dados. 
+
+Criação dos devidos relacionamentos para que cada usuário tenha sua task salva no banco de dados. 
+
+Implementação do CRUD das rotas de auth/users/tasks, de acordo com as regras de negócio.
+
+O JWT é guardado através de cookie logo após o login, e algumas rotas são privadas e tem a visualização permitida apenas quando se está logado e com o token. 
+
+
+### :warning: Documentação da API
+
+[Acesse a documentação aqui]('')
+
