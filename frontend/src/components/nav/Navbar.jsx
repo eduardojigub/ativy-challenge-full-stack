@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { FcTodoList } from 'react-icons/fc';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
-import classes from './Navbar.module.scss';
+import classes from './NavBar.module.scss';
 
 function Navbar() {
   const [user, setUser] = useState(null);
