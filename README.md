@@ -86,7 +86,7 @@ A aplicação também possui rotas privadas e as páginas de edição de perfil 
     * `git clone git@github.com:eduardojigub/ativy-challenge-full-stack.git`
     * Acesse a pasta frontend e dê o comando `npm install`
     * Acesse a pasta backend e dê o comando `npm install`
-    * configurar as variaveis de ambiente, conforme arquivo `.env.example`, obs: o arquivo deve estar na pasta backend. 
+    * Agora você precisa configurar as variaveis de ambiente, conforme arquivo `.env.example`, obs: o arquivo deve estar na pasta backend. 
     * Rode as duas aplicações com o comando "npm run dev" em suas respectivas pastas.
     * Acesse o localhost e utilize a aplicação como desejar.
 
