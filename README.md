@@ -24,3 +24,24 @@ Desenvolvimento de aplicação Full Stack, construindo uma API com NodeJs para g
   <img src="https://user-images.githubusercontent.com/47367373/196340766-e1885daf-e841-4681-8d71-13101ccc8493.gif"
  alt="Fluxo Logins"/>
 </p>
+
+## :pushpin: Back-end
+
+### Habilidades
+
+Utilização do serviço Mongo DB Atlas para utilização de banco de dados cloud. 
+
+Realizado o CRUD da aplicação com Node+React+AtlasDB.
+
+Libs utilizadas no módulo de Back end:
+
+- express
+- nodemon
+- mongoose
+- morgan
+- cookieParser
+- dotenv
+- cors
+- jsonwebtoken
+
+Desenvolvido com conceitos de arquitetura de software(models e controllers) e Utilização do conceito de Arquitetura REST.
