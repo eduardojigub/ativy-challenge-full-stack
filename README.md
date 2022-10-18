@@ -56,6 +56,7 @@ Implementação do CRUD das rotas de auth/users/tasks, de acordo com as regras d
 
 O JWT é guardado através de cookie logo após o login, e algumas rotas são privadas e tem a visualização permitida apenas quando se está logado e com o token. 
 
+<img src="https://user-images.githubusercontent.com/47367373/196344273-e6d7d1f7-9253-45b8-a007-02dadd212a7c.png" />
 
 ### :warning: Documentação da API
 
