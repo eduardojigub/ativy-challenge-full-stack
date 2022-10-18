@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-import Task from '../models/taskModel.js';
+import Task from '../models/TaskModel.js';
 import createError from '../middlewares/errorMiddleware.js';
 
 export const createTask = async (req, res, next) => {
