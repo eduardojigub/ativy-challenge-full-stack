@@ -64,6 +64,11 @@ O JWT é guardado através de cookie logo após o login, e algumas rotas são pr
 <a href="https://documenter.getpostman.com/view/23926961/2s847FtYgj" />
 https://documenter.getpostman.com/view/23926961/2s847FtYgj
 
+Exemplo Atlas MongoDB:
+
+![image](https://user-images.githubusercontent.com/47367373/196526661-403ab35c-9613-46bc-8d41-308d4ea96f58.png)
+
+
 ## :pushpin: Front-end
 
 ### Habilidades
