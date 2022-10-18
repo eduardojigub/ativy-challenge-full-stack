@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { FaUserAlt } from 'react-icons/fa';
+import { FcTodoList } from 'react-icons/fc';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import classes from './Navbar.module.scss';
@@ -38,7 +38,7 @@ function Navbar() {
   return (
     <header>
       <div className={classes.userInfo}>
-        <FaUserAlt className={classes.userIcon} />
+        <FcTodoList className={classes.userIcon} />
         <div>
           <h1 className={classes.name}>{user.name}</h1>
           <p className={classes.email}>

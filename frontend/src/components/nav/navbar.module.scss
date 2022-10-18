@@ -7,7 +7,7 @@ header {
 .userInfo {
   display: flex;
   .userIcon {
-    width: 40px;
+    width: 30px;
     height: 100%;
     border-radius: 50%;
     padding: 0.5rem;
@@ -15,11 +15,11 @@ header {
     margin-right: 0.5rem;
   }
   .name {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
   }
   .email {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     margin-top: 5px;
   }
 }
