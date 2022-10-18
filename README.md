@@ -3,7 +3,7 @@
 Desenvolvimento de aplicação Full Stack, construindo uma API com NodeJs para gerenciar uma To-Do List. 
 
 ## :pushpin: Telas do projeto:
-<h3 align="center"></h3>
+<h3 align="center">Fluxo de Registro</h3>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/47367373/196340386-11e9e6b7-7b4e-4d81-b715-4e72cdbc55fc.gif" alt="Fluxo Registro"/>
 </p>
