@@ -61,3 +61,39 @@ O JWT é guardado através de cookie logo após o login, e algumas rotas são pr
 
 [Acesse a documentação aqui]('')
 
+## :pushpin: Front-end
+
+### Habilidades
+
+Manipulação do Reactjs utilizando componentes funcionais com hooks, custom hooks . 
+
+Criação de Hooks customizados para agilizar no desenvolvimento.
+
+Libs utilizadas:
+- SASS
+- React Hot Toast (para avisos de erros e sucessos)
+- react router dom
+
+
+### O que foi desenvolvido
+
+Desenvolvimento da interface de uma aplicação todo-list que permite a inserção, atualização, leitura e deleção de tarefas.
+A aplicação também possui rotas privadas e as páginas de edição de perfil e de tarefa. 
+
+## :pushpin: Como acessar o projeto
+
+1. Clone e rode o projeto localmente:
+    * `git clone git@github.com:eduardojigub/ativy-challenge-full-stack.git`
+    * Acesse a pasta frontend e dê o comando `npm install`
+    * Acesse a pasta backend e dê o comando `npm install`
+    * configurar as variaveis de ambiente, conforme arquivo `.env.example`, obs: o arquivo deve estar na pasta backend. 
+    * Rode as duas aplicações com o comando "npm run dev" em suas respectivas pastas.
+    * Acesse o localhost e utilize a aplicação como desejar.
+
+
+## :thought_balloon: Autores
+
+- GitHub - [Eduardo Sousa](https://github.com/eduardojigub)
+
+
+
