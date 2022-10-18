@@ -95,8 +95,8 @@ A aplicação também possui rotas privadas e as páginas de edição de perfil 
     * Acesse a pasta frontend e dê o comando `npm install`
     * Acesse a pasta backend e dê o comando `npm install`
     * Agora você precisa configurar as variaveis de ambiente, conforme arquivo `.env.example`, obs: o arquivo deve estar na pasta backend. 
-    * Rode as duas aplicações com o comando "npm run dev" em suas respectivas pastas.
-    * Acesse o localhost e utilize a aplicação como desejar.
+    * Rode as duas aplicações com o comando `npm run dev` em suas respectivas pastas.
+    * Acesse o localhost e ucria sua conta e utilize a aplicação como desejar.
 
 
 ## :thought_balloon: Autores
