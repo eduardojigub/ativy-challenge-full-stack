@@ -57,6 +57,7 @@ Implementação do CRUD das rotas de auth/users/tasks, de acordo com as regras d
 O JWT é guardado através de cookie logo após o login, e algumas rotas são privadas e tem a visualização permitida apenas quando se está logado e com o token. 
 
 <img src="https://user-images.githubusercontent.com/47367373/196344273-e6d7d1f7-9253-45b8-a007-02dadd212a7c.png" />
+<img src="https://user-images.githubusercontent.com/47367373/196345453-c667087e-1429-4dcf-9f4d-b0469d4fe645.png" />
 
 ### :warning: Documentação da API
 
@@ -75,6 +76,11 @@ Libs utilizadas:
 - React Hot Toast (para avisos de erros e sucessos)
 - react router dom
 
+## :pushpin: Rotas 
+
+<img src="https://user-images.githubusercontent.com/47367373/196345624-d40b6414-f278-4d6b-8d3f-7636723b221f.png" />
+
+OBS: As rotas /, /Edit-Profile e /EditTask são privadas e só são acessíveis caso o usuário esteja logado, tanto no front-end quanto no back-end. 
 
 ### O que foi desenvolvido
 
