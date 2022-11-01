@@ -82,6 +82,7 @@ Libs utilizadas:
 - React Hot Toast (para avisos de erros e sucessos)
 - React router dom
 - Axios
+- ESLint
 
 ## :pushpin: Rotas 
 
