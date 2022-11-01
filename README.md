@@ -80,7 +80,8 @@ Criação de Hooks customizados para agilizar no desenvolvimento.
 Libs utilizadas:
 - SASS
 - React Hot Toast (para avisos de erros e sucessos)
-- react router dom
+- React router dom
+- Axios
 
 ## :pushpin: Rotas 
 
